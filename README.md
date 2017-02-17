@@ -2,6 +2,9 @@
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
+NOTE: Comments in CAPS-LOCK are mine for better understanding.
+ADD ON: at start of project so it sets up scss file and adds import and deletes css file.
+:ember install ember-cli-sass && ember install ember-cli-bootstrap-sassy && echo '@import "bootstrap";' > ./app/styles/app.scss && rm ./app/styles/app.css.
 
 ## Prerequisites
 

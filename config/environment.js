@@ -23,6 +23,7 @@ module.exports = function(environment) {
     }
   };
 
+  // * A LIST OF DEBUGGING OPTIONS FOR EMBER INSPECTOR//*
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

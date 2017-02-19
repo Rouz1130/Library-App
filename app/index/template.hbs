@@ -1,20 +1,24 @@
+
 <div class="jumbotron text-center">
-  <h1>Coming Soon</h1>
+  <!-- declared headerMessage in contr -->
+    <h1>{{headerMessage}}</h1>
 
-  <br/><br/>
+    <br/><br/>
 
-  <p>Don't miss our launch date, request an invitation now.</p>
+    <p>Don't miss our launch date, request an invitation now.</p>
 
-  <div class="form-horizontal form-group form-group-lg row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-      <!--we set a variable/property with value=emailAddress. Therefore if user types someting into input box, it will update variable in controller.  -->
-      <input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"/>
+    <div class="form-horizontal form-group form-group-lg row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+          {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+            <button class="btn btn-primary btn-lg btn-block" {{action 'sendInvitation'}} disabled="{{unless isValid 'disabled'}}">Send invitation</button>
+        </div>
     </div>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
-        <!--add the disabled property with a boolean variable which we are going to set in the corresponding controller   -->
-        <button disabled={{isDisabled}} class="btn btn-primary btn-lg btn-block">Request invitation</button>
-    </div>
-  </div>
+    <!-- declared class responseMessage in controller -->
+    {{#if responseMessage}}
+        <div class="alert alert-success" role="alert">{{responseMessage}}</div>
+    {{/if}}
 
-  <br/><br/>
+    <br/><br/>
 </div>

@@ -21,7 +21,10 @@ export default Ember.Controller.extend({
       // promises us that it is trying to save our data. It could be successful or maybe return with an error.
 
       // .then catch the result of the promise with .then() which is a chained fucntion
+
+    // saving process is successful, ‘fulfilled’ by PROMISE we will get a response from the server.
       newInvitation.save().then((response) => {
+        // in javascript .this points to the object that wraps around it.
         this.set('responseMessage', "Thank you! We saved your email address with the following id: " + response.get('id'));
         this.set('emailAddress', '');
       });

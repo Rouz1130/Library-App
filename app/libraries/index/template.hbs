@@ -1,0 +1,13 @@
+<h2>List</h2>
+<!--panel style from bootstrap  -->
+{{#each model as |library|}}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{library.name}}</h3>
+  </div>
+  <div class="pane-body">
+    <p>Address: {{library.address}}</p>
+    <p>Phone: {{library.phone}}</p>
+  </div>
+</div>
+{{/each}}

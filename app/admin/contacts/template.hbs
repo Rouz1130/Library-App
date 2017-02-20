@@ -1,0 +1,25 @@
+
+<h1>Contacts</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>E-mail</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- {{#each}}{{/each}} handlebar block helper to generate a list. The model is refrenced cause it contains an array of invitations. -->
+
+    <!--it retrives data/model from server , that function is in the invitation ROUTE HANDLER  -->
+  {{#each model as |contact|}}
+    <tr>
+      <th>{{contact.id}}</th>
+      <td>{{contact.email}}</td>
+      <td>{{contact.message}}</td>
+    </tr>
+  {{/each}}
+
+  </tbody>
+</table>

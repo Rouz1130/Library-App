@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  // refactored took disabled computed property out.  brought in isValidEmail email add but changed it to isValid for the contact page stays same in index. Added message.length for atleast 5 characters with computed property
+  // Added message.length for atleast 5 characters with computed property
  isValidEmail: Ember.computed.match('emailAddress', /^.+@.+\..+$/),
  // compute.gte is not type its note suppose to be get: stands for greater or = too
  isMessageEnoughLong: Ember.computed.gte('message.length', 5),

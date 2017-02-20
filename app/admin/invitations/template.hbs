@@ -9,7 +9,9 @@
     </tr>
   </thead>
   <tbody>
-    <!-- {{#each}}{{/each}} handlebar block helper to generate a list. The model -->
+    <!-- {{#each}}{{/each}} handlebar block helper to generate a list. The model is refrenced cause it contains an array of invitations. -->
+
+    <!--it retrives data/model from server , that function is in the invitation ROUTE HANDLER  -->
   {{#each model as |invitation|}}
     <tr>
       <th>{{invitation.id}}</th>

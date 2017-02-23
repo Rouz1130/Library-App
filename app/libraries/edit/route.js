@@ -8,6 +8,18 @@ export default Ember.Route.extend({
     return this.store.findRecord('library', params.library_id);
   },
 
+  // setupController hook
+  setupController(controller, model) {
+    this._super(controller,model);
+
+    controller.set('title', 'Edit library');
+    controller.set('buttonLabel', 'save Changes');
+  },
+
+  // renderTemplate hook to make our default template
+  renderTemplate() {
+    this.render('libraries/form');
+  },
 
     // 2 actions: 1st-  redirect user to main libraries home page
 

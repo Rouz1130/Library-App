@@ -1,9 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-//  createRecord it appears in teh controller and in template.
-  model() {
+//  createRecord it appears in the controller and in template.
+  model: function() {
     return this.store.createRecord('library');
+  },
+
+// setupController hook .
+  setupController: function (controller, model) {
+    this._super(controller, model);
+
+    controller.set('title', 'Create a new Library');
+    controller.set('buttonLabel','Create');
+  },
+
+  // setting non-default template location with renderTemplate hook.
+  renderTemplate() {
+    this.render('libraries/form');
   },
 
   actions: {
@@ -18,10 +31,13 @@ export default Ember.Route.extend({
     // called when you lave a page(route)
     // In our case, we use this action to reset the model if we haven’t saved it in the database yet.
     willTransition() {
-      // rollbackAttributes() removes the record from the store
-     // if the model 'isNew
 
-      this.controller.get('model').rollbackAttributes();
+      let model = this.controller.get('model');
+
+      if(model.get('isNew')) {
+        model.destroyRecord();
+      }
+
     }
   }
 });

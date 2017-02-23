@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  buttonLabel: 'save',
+  buttonLabel: 'Save',
 
-  actions:  {
+  actions: {
+
     buttonClicked(param) {
       this.sendAction('action', param);
     }
+
   }
 });

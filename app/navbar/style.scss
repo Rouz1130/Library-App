@@ -1,7 +1,6 @@
-// ALLOWS FOR NAV-BAR NOT TO HUG TOP OF PAGE: THE HIGHER THE PX NUMBER THE LOWER ON THE PAGE IT DISPLAYS
+# app/styles/app.scss
+@import 'bootstrap';
 
-// # app/styles/app.scss
-// @import 'bootstrap';
 body {
   padding-top: 20px;
 }

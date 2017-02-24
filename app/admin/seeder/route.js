@@ -7,7 +7,7 @@ export default Ember.Route.extend({
       libraries: this.store.findAll('library'),
       books: this.store.findAll('book'),
       authors: this.store.findAll('author')
-    })
+    });                          
   },
 
   // steupController hook we split up models in their own controller.

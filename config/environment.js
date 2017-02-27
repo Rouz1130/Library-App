@@ -42,12 +42,11 @@ module.exports = function(environment) {
 
   // * A LIST OF DEBUGGING OPTIONS FOR EMBER INSPECTOR//*
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
+
+  ENV['ember-cli-mirage'] = {
+  enabled: false
+  };
+}
 
   if (environment === 'test') {
     // Testem prefers this...
@@ -61,8 +60,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-        ENV['ember-faker'] = { enabled: true };        
+    ENV['ember-faker'] = {
+      enabled: true
+    };
   }
+
 
   return ENV;
 };

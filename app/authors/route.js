@@ -6,6 +6,8 @@ export default Ember.Route.extend({
     return this.store.findAll('author');
   },
 
+  // Any time when we invoke an action, it passes the selected author record to that function as a parameter, so we can set isEditing on that record only.
+
   actions: {
   editAuthor(author) {
     author.set('isEditing', true);
@@ -13,6 +15,7 @@ export default Ember.Route.extend({
 
   cancelAuthorEdit(author) {
     author.set('isEditing', false);
+    // In case of cancellation we revoke changes with rollbackAttributes
     author.rollbackAttributes();
 
   },

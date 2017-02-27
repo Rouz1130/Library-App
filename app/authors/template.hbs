@@ -1,29 +1,41 @@
-
-<!-- It’s a simple striped table with two columns -->
 <h1>Authors</h1>
 
 <table class="table table-bordered table-striped">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Books</th>
-    </tr>
+  <tr>
+    <th>
+      Name
+      <br><small class="small not-bold">(Click on name for editing)</small>
+    </th>
+    <th class="vtop">Books</th>
+  </tr>
   </thead>
   <tbody>
-    <!-- model array contains all the record about authors
-    so we can list them with an each block. Showing the author.name -->
-    {{#each model as |author|}}
-      <tr>
-        <td>{{author.name}}</td>
-        <td>
-          <ul>
-            <!-- We setup in our model/author.js file, that books field connect to Book model with a hasMany relationship. Ember Data fills that field with an array of records. We can use an each block to iterate them and list in our table -->
-            {{#each author.books as |book|}}
-              <li>{{book.title}}</li>
-            {{/each}}
-          </ul>
-        </td>
-      </tr>
-    {{/each}}
+  {{#each model as |author|}}
+    <tr>
+      <td>
+        {{#if author.isEditing}}
+          <form {{action 'saveAuthor' author on='submit'}} class="form-inline">
+            <div class="input-group">
+              {{input value=author.name class="form-control"}}
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-success" disabled={{author.isNotValid}}>Save</button>
+                <button class="btn btn-danger" {{action 'cancelAuthorEdit' author}}>Cancel</button>
+              </div>
+            </div>
+          </form>
+        {{else}}
+          <span {{action 'editAuthor' author}}>{{author.name}}</span>
+        {{/if}}
+      </td>
+      <td>
+        <ul>
+          {{#each author.books as |book|}}
+            <li>{{book.title}}</li>
+          {{/each}}
+        </ul>
+      </td>
+    </tr>
+  {{/each}}
   </tbody>
-</table>
+</table> 

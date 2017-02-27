@@ -10,10 +10,10 @@
     </div>
 
     <button class="btn btn-primary" {{action 'generateAction'}} disabled={{if isCounterValid false true}}>Generate {{sectionTitle}}</button>
-    {{#fader-label isShowing=createReady}}Created!{{/fader-label}}
+    {{#fader-label isShowing=createReady}}  Created!{{/fader-label}}
 
     <button class="btn btn-danger" {{action 'deleteAction'}}>Delete All {{sectionTitle}}</button>
-    {{#fader-label isShowing=deleteReady}}Deleted!{{/fader-label}}
+    {{#fader-label isShowing=deleteReady}}  Deleted!{{/fader-label}}
 
   </div>
 </div>

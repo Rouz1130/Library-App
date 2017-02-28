@@ -1,4 +1,3 @@
-// app/models/book.js
 import DS from 'ember-data';
 import Faker from 'faker';
 

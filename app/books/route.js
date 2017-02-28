@@ -75,7 +75,6 @@ export default Ember.Route.extend({
     },
 
     saveLibrary(library, book) {
-    
       book.get('library').then((previousLibrary) => {
         previousLibrary.get('books').then((previousLibraryBooks) => {
           previousLibraryBooks.removeObject(book);

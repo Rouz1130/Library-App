@@ -41,39 +41,6 @@ export default Ember.Route.extend({
       book.save();
     },
 
-    editAuthor(book) {
-      book.set('isAuthorEditing', true);
-    },
-
-    cancelAuthorEdit(book) {
-      book.set('isAuthorEditing', false);
-      book.rollbackAttributes();
-    },
-
-    saveAuthor(author, book) {
-      // Firebase adapter is buggy, we have to manually remove the previous relation
-      book.get('author').then((previousAuthor) => {
-        previousAuthor.get('books').then((previousAuthorBooks) => {
-          previousAuthorBooks.removeObject(book);
-          previousAuthor.save();
-        });
-      });
-
-      // Setup the new relation
-      book.set('author', author);
-      book.save().then(() => author.save());
-      book.set('isAuthorEditing', false);
-    },
-
-    editLibrary(book) {
-      book.set('isLibraryEditing', true);
-    },
-
-    cancelLibraryEdit(book) {
-      book.set('isLibraryEditing', false);
-      book.rollbackAttributes();
-    },
-
     saveLibrary(library, book) {
       book.get('library').then((previousLibrary) => {
         previousLibrary.get('books').then((previousLibraryBooks) => {

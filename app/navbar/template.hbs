@@ -2,13 +2,15 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <a class="navbar-brand" href="">
+        <img class="imgN" alt="Brand" src="http://www.mobygames.com/images/i/02/31/689481.png" style="width:100px;height:80px">
+      </a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{#link-to 'index' class="navbar-brand"}}Library Catalog{{/link-to}}
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
@@ -22,6 +24,8 @@
       <ul class="nav navbar-nav navbar-right">
               {{#nav-link-to 'about'}}<span class="	glyphicon glyphicon-comment"></span> About{{/nav-link-to}}
               {{#nav-link-to 'contact'}}<span class="=glyphicon glyphicon-envelope"></span> Contact{{/nav-link-to}}
+
+
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"> Admin</span><span
                     class="caret"></span></a>

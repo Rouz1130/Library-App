@@ -2,9 +2,9 @@
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
-NOTE: Comments in CAPS-LOCK are mine for better understanding.
-ADD ON: at start of project so it sets scss file and adds import and deletes css file.
-:ember install ember-cli-sass && ember install ember-cli-bootstrap-sassy && echo '@import "bootstrap";' > ./app/styles/app.scss && rm ./app/styles/app.css.
+This is an application used to store  different libraries in a databse with the ability for
+an admin to add more existing libraries to the database. It allows the Admin to have CRUD
+functionality as they can add , delete , edit current list of libraries.
 
 #### Deploy firebase:
 

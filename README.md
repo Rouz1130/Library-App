@@ -1,12 +1,8 @@
 # library-app
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-This is an application used to store  different libraries in a databse with the ability for
-an admin to add more existing libraries to the database. It allows the Admin to have CRUD
-functionality as they can add , delete , edit current list of libraries.
+An application used to store different libraries with and their inventory of books into a database. An Admin has the ability to add more books to a particular library and also has the ability to add a new library. Full Crud functionality.   
 
-#### Deploy firebase:
+#### Deploy firebase Instructions:
 
 $ npm install -g firebase-tools
 $ ember build --prod
@@ -25,6 +21,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
+* Project is deployed using Firebase just click the link at the top of the page. Below our isntructions on cloning down project.
 * `git clone <repository-url>` this repository
 * `cd library-app`
 * `npm install`
